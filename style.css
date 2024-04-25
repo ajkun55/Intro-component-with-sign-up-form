@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  :root{
+    --clr-Red: hsl(0, 100%, 74%);
+    --clr-Green: hsl(154, 59%, 51%);    
+    --clr-Blue: hsl(248, 32%, 49%);    
+    --clr-Dark-Blue: hsl(249, 10%, 26%);
+    --clr-Grayish-Blue: hsl(246, 25%, 77%);
+    --fw-1:400;
+    --fw-2:500;
+    --fw-3:600;
+    --fw-4:700;
+  }
+
+  body{
+    width: 100%; height: 800px;
+    font-size: 16px;
+    font-family: "Poppins";
+    background-image: url('/images/bg-intro-desktop.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;    
+    background-color: var(--clr-Red);
+    display: grid;
+    place-content: center;
+  }
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    --spacing: 1.35rem;
+    --padding: 2rem;
+    gap: var(--spacing);
+    max-width: 75%;
+    margin: 0 auto;
+    height: 560px;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing);
+    width: 100%;
+}
+
+h1{
+    font-size: 3.2rem;
+    color: white;
+    font-weight: var(--fw-4);
+}
+
+.promotion{
+    color: rgb(230, 227, 227);
+    
+}
+
+.signup{
+    display: grid;
+    gap: var(--spacing);
+    height: 100%;
+}
+
+.price_plan{
+    background-color: var(--clr-Blue);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    height: 4rem;
+    box-shadow: 0 7px 0 0.1px #00000030;
+}
+
+.price_plan:first-of-type{
+    color: var(--clr-Grayish-Blue);
+    font-weight: var(--fw-1);
+}
+
+.bold{
+    font-weight: var(--fw-3);
+    color: white;
+}
+
+.whiteboard{
+    background-color: white;
+    width: 100%;
+    height: 475px;
+    display: grid;
+    padding: var(--padding);
+    gap: var(--spacing);
+    border-radius: 1rem;
+    box-shadow: 0 8px 0 0.1px #00000030;
+}
+
+.whiteboard > * {
+    border-radius: 0.5rem;
+    border: 1px solid var(--clr-Grayish-Blue);    
+}
+
+.whiteboard div{
+    display: none;
+    color: var(--clr-Red);
+    font-size: 0.7rem;
+    border: none;
+    margin: 0;
+    text-align: right;
+}
+
+input{
+    padding-left: 2rem;
+}
+
+button{
+    background-color: var(--clr-Green);
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.1rem;
+    font-weight: var(--fw-3);
+    border-bottom: 3px solid var(--clr-Dark-Blue);
+    box-shadow: 0 3px 0 0.1px #00000030;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+.terms{
+    border: none;
+    font-weight: var(--fw-1);
+    font-size: 0.8rem;
+    color: var(--clr-Grayish-Blue);
+    text-align: center;
+    gap: 0;
+}
+
+.red{
+    font-weight: var(--fw-3);    
+    color: var(--clr-Red);
+}
+
+@media (width < 700px){
+    body{
+        width:100%;
+        height: auto;
+        background-image: url('./images/bg-intro-mobile.png');
+        display: flex;
+        font-size: 12px;
+    }
+    h1{
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-width: 90%;
+        margin: 5rem auto;
+    }
+    .price_plan p{
+        max-width: 60%;
+    }
+    input{
+        font-weight: var(--fw-3);
+    }
+    .terms{
+        font-size: 0.6rem;
+    }
+}
+
+    .attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0;right: 0;}
+    .attribution a { color: hsl(228, 45%, 44%); }
